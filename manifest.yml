@@ -1,0 +1,16 @@
+_version: '20220212062110'
+
+plugins:
+  echo:
+    remote: '/home/daniel/code/pluggable-cli/plugins/echo'
+    run: '{plugin_dir}/echo.sh'
+    # preInstallCommand: 
+    # installCommand: git clone $remote
+    # may also want to checkout a provided version tag and copy contents
+    # and only clone to a "plugin-repos" dir
+    # might want to omit git history, too?
+    # postInstallCommand: 
+
+  shutup:
+    remote: '/home/daniel/code/pluggable-cli/plugins/shutup'
+    run: '{plugin_dir}/shutup.sh'
