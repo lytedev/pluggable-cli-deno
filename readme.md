@@ -4,12 +4,37 @@ None of this crap is really tested. Have fun!
 
 ## Installation
 
-- **Linux x86_64**: `sudo curl -o /usr/bin/poc-cli https://files.lyte.dev/poc-cli/poc-cli.linux.x86_64 && sudo chmod 755 /usr/bin/poc-cli`
-- **macOS Intel**: `sudo curl -o /usr/bin/poc-cli https://files.lyte.dev/poc-cli/poc-cli.darwin.x86_64 && sudo chmod 755 /usr/bin/poc-cli`
-- **macOS Apple Silicon (M1)**: `sudo curl -o /usr/bin/poc-cli https://files.lyte.dev/poc-cli/poc-cli.darwin.aarch64 && sudo chmod 755 /usr/bin/poc-cli`
-- **File Archive**: https://files.lyte.dev/poc-cli/
+Run the below scripts to install `poc-cli` for your platform:
 
-Then run with `poc-cli`.
+### Linux x86_64
+
+```sh
+sudo curl -o /usr/bin/poc-cli \
+	https://files.lyte.dev/poc-cli/poc-cli.linux.x86_64
+sudo chmod 755 /usr/bin/poc-cli
+```
+
+### macOS Intel
+
+```sh
+sudo curl -o /usr/bin/poc-cli \
+	https://files.lyte.dev/poc-cli/poc-cli.darwin.x86_64
+sudo chmod 755 /usr/bin/poc-cli
+```
+
+### macOS Apple Silicon (M1)
+
+```sh
+sudo curl -o /usr/bin/poc-cli \
+	https://files.lyte.dev/poc-cli/poc-cli.darwin.aarch64
+sudo chmod 755 /usr/bin/poc-cli
+```
+
+### Just let me download files through my browser like a normal human being
+
+Ok, fine geez.
+
+- **File Archive**: https://files.lyte.dev/poc-cli/
 
 ### Why are these binaries so freakin' big?
 
