@@ -62,6 +62,12 @@ deno compile -A -o poc-cli.darwin.x86_64 --target x86_64-apple-darwin src/core.t
 deno compile -A -o poc-cli.darwin.aarch64 --target aarch64-apple-darwin src/core.ts
 ```
 
+### Deploy Artifacts
+
+```
+rcp ./poc-cli.* faceless:~/../public-static-files/poc-cli/
+```
+
 ### Install
 
 I dunno, but probably something like this:
