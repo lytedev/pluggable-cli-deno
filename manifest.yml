@@ -2,15 +2,17 @@ _version: '20220212062110'
 
 plugins:
   echo:
-    remote: '/home/daniel/code/pluggable-cli/plugins/echo'
+    remote: 'https://git.lyte.dev/lytedev/echo.git'
     run: '{plugin_dir}/echo.sh'
-    # preInstallCommand: 
-    # installCommand: git clone $remote
+    # this is the default installCommand, so we don't really need to specify it
+    installCommand: ['git', 'clone', '{remote}', '{plugin_dir}']
+    # none of these work, but wouldn't be tough to implement if needed
+    # preInstallCommand:
     # may also want to checkout a provided version tag and copy contents
     # and only clone to a "plugin-repos" dir
     # might want to omit git history, too?
     # postInstallCommand: 
 
   shutup:
-    remote: '/home/daniel/code/pluggable-cli/plugins/shutup'
+    remote: 'https://git.lyte.dev/lytedev/shutup-cli-plugin.git'
     run: '{plugin_dir}/shutup.sh'
