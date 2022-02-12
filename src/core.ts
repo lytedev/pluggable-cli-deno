@@ -34,6 +34,9 @@ async function usage() {
 	console.info("  ensure-plugin <plugin-name>")
 	console.info("  list-plugins")
 	console.info("  show-config")
+	console.info("  <plugin> [args] (Example: poc-cli echo Parrot)")
+	console.info("    if the specified plugin isn't installed,")
+	console.info("    poc-cli will install it for you")
 }
 
 async function listPlugins() {

@@ -2,6 +2,8 @@
 
 None of this crap is really tested. Have fun!
 
+[🖥️ Upstream][upstream] • [🐙 GitHub Mirror][github]
+
 ## Installation
 
 Run the below scripts to install `poc-cli` for your platform:
@@ -72,7 +74,7 @@ sudo chmod 755 /usr/bin/poc-cli
 
 ## Usage
 
-It's self-documenting!
+It's self-documenting... sort of!
 
 ```
 poc-cli
@@ -125,3 +127,6 @@ poc-cli
 	- Contains information about where to find plugins and their versions
 - Plugins
 	- Probably dumb scripts that call fancier things
+
+[upstream]: https://git.lyte.dev/lytedev/pluggable-cli-deno
+[github]: https://github.com/lytedev/pluggable-cli-deno
