@@ -1,7 +1,6 @@
 import {yaml, fs, path, xdg} from "./deps.ts"
 
-// const MANIFEST_URL = "https://git.lyte.dev/lytedev/pluggable-cli-deno/raw/branch/master/manifest.yml"
-const MANIFEST_URL = "file:///home/daniel/code/pluggable-cli/manifest.yml"
+const MANIFEST_URL = "https://git.lyte.dev/lytedev/pluggable-cli-deno/raw/branch/master/manifest.yml"
 const PLUGINS_DIR = path.join(xdg.cache(), "/poc-cli-installed-plugins")
 
 fs.ensureDir(PLUGINS_DIR)
