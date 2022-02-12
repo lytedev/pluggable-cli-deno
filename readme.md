@@ -1,10 +1,27 @@
 # CLI Proof-of-Concept
 
+None of this crap is really tested. Have fun!
+
+## Installation
+
+- **Linux x86_64**: `sudo curl -o /usr/bin/poc-cli https://files.lyte.dev/poc-cli/poc-cli.linux.x86_64 && sudo chmod 755 /usr/bin/poc-cli`
+- **macOS Intel**: `sudo curl -o /usr/bin/poc-cli https://files.lyte.dev/poc-cli/poc-cli.darwin.x86_64 && sudo chmod 755 /usr/bin/poc-cli`
+- **macOS Apple Silicon (M1)**: `sudo curl -o /usr/bin/poc-cli https://files.lyte.dev/poc-cli/poc-cli.darwin.aarch64 && sudo chmod 755 /usr/bin/poc-cli`
+- **File Archive**: https://files.lyte.dev/poc-cli/
+
+Then run with `poc-cli`.
+
+### Why are these binaries so freakin' big?
+
+It's got the whole Deno runtime packed in there.
+
+Also, something something your mom. <3
+
 ## Known Issues
 
 - The plugin directory being present doesn't _really_ mean it's "installed" ;P
 
-## Compile
+## Compile It Yourself
 
 ```sh
 deno compile -A -o poc-cli src/core.ts
@@ -12,12 +29,18 @@ deno compile -A -o poc-cli src/core.ts
 
 You can cross-compile, too. See `deno compile --help` for `--target`.
 
-## Install
+```
+deno compile -A -o poc-cli.linux.x86_64 --target x86_64-unknown-linux-gnu src/core.ts
+deno compile -A -o poc-cli.darwin.x86_64 --target x86_64-apple-darwin src/core.ts
+deno compile -A -o poc-cli.darwin.aarch64 --target aarch64-apple-darwin src/core.ts
+```
+
+### Install
 
 I dunno, but probably something like this:
 
 ```sh
-sudo mv poc-cli /usr/bin
+sudo mv poc-cli /usr/bin/poc-cli
 sudo chown root:root /usr/bin/poc-cli
 sudo chmod 755 /usr/bin/poc-cli
 ```
@@ -32,7 +55,7 @@ poc-cli
 
 -----
 
-# Notes Below!
+# My Old Notes Below!
 
 -----
 
