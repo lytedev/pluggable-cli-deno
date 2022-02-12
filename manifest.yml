@@ -6,13 +6,47 @@ plugins:
     run: '{plugin_dir}/echo.sh'
     # this is the default installCommand, so we don't really need to specify it
     installCommand: ['git', 'clone', '{remote}', '{plugin_dir}']
+    preInstallCommand: ['bash', '-c', 'echo "is this thing on?"']
+    # postInstallCommand: 
     # none of these work, but wouldn't be tough to implement if needed
-    # preInstallCommand:
     # may also want to checkout a provided version tag and copy contents
     # and only clone to a "plugin-repos" dir
     # might want to omit git history, too?
-    # postInstallCommand: 
 
   shutup:
     remote: 'https://git.lyte.dev/lytedev/shutup-cli-plugin'
     run: '{plugin_dir}/shutup.sh'
+
+  'go-hello-world':
+    preInstallCommand:
+      # install golang using asdf
+      # if we wanted, we could have an asdf plugin and install it here like
+      # poc-cli install-plugin asdf
+      # and it would make sure the shell and everything is ready to go
+      - 'bash'
+      - '-c'
+      - 'asdf plugin-add golang; asdf install golang latest; asdf global golang latest; curl -o /tmp/hello-world.go https://raw.githubusercontent.com/mmcgrana/gobyexample/master/examples/hello-world/hello-world.go'
+    installCommand:
+      - bash
+      - '-c'
+      - 'cd {plugin_dir} && go build /tmp/hello-world.go'
+    run: '{plugin_dir}/hello-world'
+
+  'elixir-hello-jason':
+    preInstallCommand:
+      # obviously, installing elixir and erlang through asdf can be a little
+      # hairy in the real world, but a contrived example suits this
+      # proof-of-concept just fine
+      - 'bash'
+      - '-c'
+      - 'asdf plugin-add erlang; asdf plugin-add elixir; asdf install erlang latest; asdf install elixir latest; asdf global erlang latest; asdf global elixir latest'
+    installCommand:
+      - bash
+      - '-c'
+      # remember, instead of installing :jason, we might install internal libraries!
+      - 'printf "%s\n%s" "Mix.install([:jason])" "IO.puts(Jason.encode!(%{hello: :world}))" > {plugin_dir}/script.exs'
+    run:
+      - elixir 
+      - '{plugin_dir}/script.exs'
+
+    # in the real world, most of these scripts would probably live within the plugin themselves to be easier to write

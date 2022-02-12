@@ -1,3 +1,41 @@
+# CLI Proof-of-Concept
+
+## Known Issues
+
+- The plugin directory being present doesn't _really_ mean it's "installed" ;P
+
+## Compile
+
+```sh
+deno compile -A -o poc-cli src/core.ts
+```
+
+You can cross-compile, too. See `deno compile --help` for `--target`.
+
+## Install
+
+I dunno, but probably something like this:
+
+```sh
+sudo mv poc-cli /usr/bin
+sudo chown root:root /usr/bin/poc-cli
+sudo chmod 755 /usr/bin/poc-cli
+```
+
+## Usage
+
+It's self-documenting!
+
+```
+poc-cli
+```
+
+-----
+
+# Notes Below!
+
+-----
+
 # Pluggable CLI
 
 - Each subcommand is a plugin?
