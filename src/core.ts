@@ -1,5 +1,7 @@
 import {yaml, fs, path, xdg} from "./deps.ts"
 
+// TODO: can we bake VERSION to be the commit hash?
+const VERSION = "0.3.0"
 const MANIFEST_URL = "https://git.lyte.dev/lytedev/pluggable-cli-deno/raw/branch/master/manifest.yml"
 const PLUGINS_DIR = path.join(xdg.cache(), "/poc-cli-installed-plugins")
 
@@ -25,7 +27,7 @@ async function showConfig() {
 }
 
 async function usage() {
-	console.info("poc-cli: a CLI proof-of-concept")
+	console.info(`poc-cli: a CLI proof-of-concept (version ${VERSION})`)
 	console.info("  -h, --help: Show usage")
 	console.info("  install-plugin <plugin-name>")
 	console.info("  update-plugin <plugin-name>")
