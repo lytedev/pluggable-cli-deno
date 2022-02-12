@@ -2,7 +2,7 @@ _version: '20220212062110'
 
 plugins:
   echo:
-    remote: 'https://git.lyte.dev/lytedev/echo.git'
+    remote: 'https://git.lyte.dev/lytedev/echo-cli-plugin'
     run: '{plugin_dir}/echo.sh'
     # this is the default installCommand, so we don't really need to specify it
     installCommand: ['git', 'clone', '{remote}', '{plugin_dir}']
@@ -14,5 +14,5 @@ plugins:
     # postInstallCommand: 
 
   shutup:
-    remote: 'https://git.lyte.dev/lytedev/shutup-cli-plugin.git'
+    remote: 'https://git.lyte.dev/lytedev/shutup-cli-plugin'
     run: '{plugin_dir}/shutup.sh'

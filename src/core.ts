@@ -47,11 +47,13 @@ async function installPlugin(pluginName: string) {
 		console.error(`plugin ${pluginName} has no entry`)
 		Deno.exit(1)
 	}
-	const cmd = pluginManifestData.installCommand || ["git", "clone", pluginManifestData.remote, pluginName].map(segment =>
+	const cmd = (pluginManifestData.installCommand || ["git", "clone", pluginManifestData.remote, pluginName]).map((segment: string) =>
 		segment
 			.replace('{remote}', pluginManifestData.remote)
 			.replace('{plugin_dir}', path.join(PLUGINS_DIR, pluginName))
 	)
+
+	console.debug(cmd)
 
 	const installCommand = Deno.run({
 		stdout: "piped",
